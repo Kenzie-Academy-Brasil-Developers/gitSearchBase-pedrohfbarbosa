@@ -1,0 +1,31 @@
+.input-main {
+    width: 100%;
+    max-width: 19.75rem;
+    height: 2.375rem;
+
+    padding: 0.625rem;
+
+    background-color: var(--color-grey-1);
+
+    font-family: var(--font-family-default);
+    font-size: var(--font-size-5);
+    font-weight: 400;
+    color: var(--color-white);
+
+    border: 1px solid var(--color-white-op-12);
+    border-radius: var(--radius-2);
+
+    outline: none;
+}
+
+.input-main::placeholder {
+    font-family: var(--font-family-default);
+
+    font-size: var(--font-size-5);
+    font-weight: 400;
+    color: var(--color-white-op-50);
+}
+
+.input-main:focus {
+    border-color: var(--color-white);
+}

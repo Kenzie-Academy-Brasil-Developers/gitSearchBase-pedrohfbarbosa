@@ -1,1 +1,85 @@
-/* Desenvolva sua estilização aqui...*/
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.recent-added-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.recent-added-wrapper h4{
+    margin-top: 0.8rem;
+}
+
+.card-minor:hover {
+    border-color: var(--color-white);
+}
+
+.card-minor figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.card-minor img {
+    height: 2.75rem;
+    width: 2.75rem;
+
+    border-radius: var(--radius-rounded);
+    border: 2px solid transparent;
+
+    object-fit: cover;
+}
+
+.card-minor img:hover {
+    border-color: var(--color-white);
+}
+
+.card-minor figcaption {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--color-white);
+
+    width: 220%;
+
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    border-radius: var(--radius-2);   
+    
+    position: absolute;
+    top: 3rem;
+
+    display: none;
+}
+
+.card-minor figure:hover > figcaption {
+    display: block;
+} 
+
+@media (max-width: 700px) {
+    body {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    .aside-content {
+        padding: 1rem;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .recent-added-wrapper {
+        flex-direction: column;
+    }
+}
+
+

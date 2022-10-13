@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/globalStyles.css" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Git Search</title>
-  </head>
-  <body>
-    <main></main>
-    <script src="index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/globalStyles.css" />
+  <link rel="stylesheet" href="../../styles/fonts.css" />
+  <link rel="stylesheet" href="../../styles/buttons.css" />
+  <link rel="stylesheet" href="../../styles/inputs.css" />
+  <link rel="stylesheet" href="../../styles/color.css" />
+  <link rel="stylesheet" href="./aside.css" />
+  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <title>Git Search</title>
+</head>
+
+<body>
+  
+  <aside class="bg-color-brand-1">
+    <section class="aside-content container-aside">
+      <h1 class="title-1">
+        Git Search
+      </h1>
+      <p class="text-0">
+        Encontre e se conecte com profissionais de forma rápida e fácil
+      </p>
+      <div class="recent-added-wrapper">
+        <h4 class="text-2">Achados Recentemente:</h4>
+        <ul class="recent-added">
+        </ul>
+      </div>
+    </section>
+  </aside>
+  <main>
+    <section class="main-content container-main">
+      <h2 class="title-3">
+        Procurar por um usuário
+      </h2>
+      <form>
+        <label for="input-main" class="text-4">Usuário github</label>
+        <input class="input-main" id="input-main" type="text" placeholder="Digite um usuário do github aqui..." required="true">
+        <span id="alert" class="text-3 color-alert hidden">Usuário não encontrado</span>
+        <button id="btn-main" type="submit" disabled="true" class="btn-main btn-disabled">
+          Ver perfil do github
+        </button>
+      </form>
+    </section>
+  </main>
+  
+  <script src="../../scripts/getuser.js"></script>
+  <script src="./localStorage.js"></script>
+  <script src="./index.js"></script>
+</body>
+
 </html>

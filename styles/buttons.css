@@ -1,0 +1,68 @@
+button {
+    cursor: pointer;
+}
+
+.btn-main {
+    width: 100%;
+    max-width: 19.75rem;
+    height: 2.375rem;
+
+    background-color: var(--color-brand-2);
+    color: var(--color-white);
+
+    padding: 0.625rem;
+
+    font-size: var(--font-size-5);
+    font-weight: 500;    
+
+    border: none;
+    border-radius: var(--radius-2);
+}
+
+.btn-main:hover {
+    background-color: var(--color-brand-1);
+}
+
+.btn-disabled {
+    opacity: 40%;
+}
+
+.btn-header {
+    height: 2.375rem;
+
+    background-color: var(--color-white-op-40);
+    
+    padding: 1rem 1.5rem;
+
+    border: none;
+    border-radius: var(--radius-1);
+
+    font-size: var(--font-size-5);
+    font-weight: 600;
+    color: var(--color-white);
+
+    display: flex;
+    align-items: center;
+}
+
+.btn-header:hover { 
+    background-color: var(--color-brand-2);
+}
+
+.btn-card {
+    height: 1.75rem;
+    background-color: var(--color-black);
+    padding: 0 0.5rem;
+
+    border: 2px solid var(--color-white);
+    border-radius: var(--radius-2);
+
+    font-size: var(--font-size-5);
+    font-weight: 500;
+    color: var(--color-white);
+}
+
+.btn-card:hover {
+    background-color: var(--color-brand-2);
+    border-color: transparent;
+}
