@@ -7,8 +7,7 @@ async function getUser(username) {
 
         return user
     } catch(error) {
-        console.log(error)
-        
+        console.log(error)        
     }  
 }
 
