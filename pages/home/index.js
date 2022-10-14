@@ -4,26 +4,26 @@ function createCardMinor(user) {
 
     const a = document.createElement("a")
     a.href = ""
+
     a.addEventListener("click", async (event) => {
-        event.preventDefault()
+        event.preventDefault()       
         
-        await getRecentAdded()
-
-        userNow = user
-        const userNowToJson = JSON.stringify(userNow)
+        const userNowToJson = JSON.stringify(user)
         localStorage.setItem("userNow", userNowToJson) 
-
-        const testFind = recentAdded.findIndex((elt) => elt.id === userNow.id)
-
-        recentAdded.splice(testFind, 1)
-        recentAdded.push(userNow)
-
-        const recentToJson = JSON.stringify(recentAdded)
-        localStorage.setItem("recentAdded", recentToJson)
 
         repoNow = await getRepos(user.login)
         const repoToJson = JSON.stringify(repoNow)
         localStorage.setItem("repoNow", repoToJson)
+        
+        await getRecentAdded()
+        
+        const testFind = recentAdded.findIndex((elt) => elt.id === user.id)
+        
+        recentAdded.splice(testFind, 1)
+        recentAdded.push(user)       
+        
+        const recentToJson = JSON.stringify(recentAdded)
+        localStorage.setItem("recentAdded", recentToJson)
 
         window.location = "../profile/index.html"
     })
@@ -44,14 +44,7 @@ function renderMinorCard(arr) {
     const recentAddedWrapper = document.querySelector(".recent-added")
     recentAddedWrapper.innerHTML = ""
     
-    if (arr.length <= 3) {
-        arr.forEach((user) => recentAddedWrapper.appendChild(createCardMinor(user)))
-    }else {
-        newArr = arr.splice(arr.length - 3, 3)    
-
-        newArr.forEach((user) => recentAddedWrapper.appendChild(createCardMinor(user)))
-    }
-    
+    arr.forEach((user) => recentAddedWrapper.appendChild(createCardMinor(user)))   
 }
 
 function createSpinner() {
@@ -90,6 +83,7 @@ btnMain.addEventListener("click", async (event)=>{
         document.getElementById("alert").classList.remove("hidden")
 
         btnMain.innerHTML = "Ver perfil do github"
+        inputMain.value = ""
     }else {
         document.getElementById("alert").classList.add("hidden")         
         
@@ -97,7 +91,12 @@ btnMain.addEventListener("click", async (event)=>{
 
         const testFind = recentAdded.findIndex((elt) => elt.id === userNow.id)
         if (testFind < 0) {
-            recentAdded.push(userNow)
+            if (recentAdded.length < 3){
+                recentAdded.push(userNow)
+            }else {
+                recentAdded.shift()
+                recentAdded.push(userNow)
+            }
         }else {
             recentAdded.splice(testFind, 1)
             recentAdded.push(userNow)
@@ -113,7 +112,9 @@ btnMain.addEventListener("click", async (event)=>{
         localStorage.setItem("recentAdded", recentToJson)
 
         const userNowToJson = JSON.stringify(userNow)
-        localStorage.setItem("userNow", userNowToJson)       
+        localStorage.setItem("userNow", userNowToJson)  
+        
+        inputMain.value = ""
         
         window.location = "../profile/index.html"        
     }

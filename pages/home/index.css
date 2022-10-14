@@ -13,10 +13,6 @@ body {
     margin-top: 0.8rem;
 }
 
-.card-minor:hover {
-    border-color: var(--color-white);
-}
-
 .card-minor figure{
     display: flex;
     flex-direction: column;

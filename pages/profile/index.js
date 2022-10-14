@@ -143,5 +143,8 @@ function renderCard(arr) {
     arr.forEach((elt) => repoWrapper.appendChild(createCardRepo(elt)))
 }
 
+document.getElementById("title-user").innerText = `${user.name}`
+document.getElementById("favicon").href = `${user.avatar_url}`
+
 renderHeader(user)
 renderCard(repos)
