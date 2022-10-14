@@ -60,6 +60,8 @@ const inputMain = document.getElementById("input-main")
 const btnMain = document.getElementById("btn-main")
 
 inputMain.addEventListener("input", () => {
+    document.getElementById("alert").classList.add("hidden")
+    
     if (inputMain.value == ""){
         btnMain.disabled = true
         btnMain.classList.add("btn-disabled")
@@ -84,6 +86,8 @@ btnMain.addEventListener("click", async (event)=>{
 
         btnMain.innerHTML = "Ver perfil do github"
         inputMain.value = ""
+        btnMain.disabled = true
+        btnMain.classList.add("btn-disabled")
     }else {
         document.getElementById("alert").classList.add("hidden")         
         
