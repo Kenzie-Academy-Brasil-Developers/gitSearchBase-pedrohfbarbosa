@@ -85,9 +85,10 @@ btnMain.addEventListener("click", async (event)=>{
         document.getElementById("alert").classList.remove("hidden")
 
         btnMain.innerHTML = "Ver perfil do github"
-        inputMain.value = ""
         btnMain.disabled = true
         btnMain.classList.add("btn-disabled")
+
+        inputMain.value = ""
     }else {
         document.getElementById("alert").classList.add("hidden")         
         
@@ -116,9 +117,7 @@ btnMain.addEventListener("click", async (event)=>{
         const userNowToJson = JSON.stringify(userNow)
         localStorage.setItem("userNow", userNowToJson)  
         
-        inputMain.value = ""
-        
-        window.location = "../profile/index.html"        
+        window.location.replace("../profile/index.html")        
     }
 })
 
