@@ -106,8 +106,6 @@ btnMain.addEventListener("click", async (event)=>{
             recentAdded.push(userNow)
         }
 
-        btnMain.innerHTML = "Ver perfil do github"
-
         repoNow = await getRepos(userName)
         const repoToJson = JSON.stringify(repoNow)
         localStorage.setItem("repoNow", repoToJson)
